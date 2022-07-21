@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Food Delivery App</string>
+    <string name="onboarding_header_first">Find your  Comfort \n Food here</string>
+    <string name="onboarding_header_second">Food Ninja is Where Your \n Comfort Food Lives</string>
+    <string name="onboarding_body_first">Here You Can find a chef or dish for every \n taste and color. Enjoy!</string>
+    <string name="onboarding_body_second">Enjoy a fast and smooth food delivery at \n your doorstep</string>
+    <string name="next">Next</string>
+</resources>
