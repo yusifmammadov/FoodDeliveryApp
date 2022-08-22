@@ -52,5 +52,5 @@ fun FoodyApp(
 ) {
     val navController = rememberNavController()
     val screenHeight = rememberScreenHeight()
-    FoodyNavHost(screenHeight, navController = navController, afterSplashRoute = afterSplashRoute)
+    FoodyNavHost(navController = navController, afterSplashRoute = afterSplashRoute)
 }

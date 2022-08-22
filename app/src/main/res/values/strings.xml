@@ -5,4 +5,12 @@
     <string name="onboarding_body_first">Here You Can find a chef or dish for every \n taste and color. Enjoy!</string>
     <string name="onboarding_body_second">Enjoy a fast and smooth food delivery at \n your doorstep</string>
     <string name="next">Next</string>
+    <string name="sign_up_for_free">Sign Up For Free</string>
+    <string name="name">Name</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+    <string name="create_account">Create Account</string>
+    <string name="find_fav_food">Find Your \nFavorite Food</string>
+    <string name="search_text">What do you want to order</string>
+    <string name="view_more">View More</string>
 </resources>

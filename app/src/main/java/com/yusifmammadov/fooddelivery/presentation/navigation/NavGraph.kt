@@ -1,5 +1,6 @@
 package com.yusifmammadov.fooddelivery.presentation.navigation
 
+
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -14,7 +15,6 @@ import com.yusifmammadov.fooddelivery.presentation.splash.SplashScreen
 @ExperimentalPagerApi
 @Composable
 fun FoodyNavHost(
-    screenHeight: Int,
     navController: NavHostController,
     afterSplashRoute: String,
     modifier: Modifier = Modifier) {
@@ -32,15 +32,18 @@ fun FoodyNavHost(
         }
 
         composable(Screen.Onboarding.route) {
-            OnBoardingScreen(screenHeight = screenHeight,
-                onOnboardingFinished = {
+            OnBoardingScreen(
+                navigateToRegistration = {
                     navController.popBackStack()
                     navController.navigate(Screen.Registration.route)
                 })
         }
 
         composable(Screen.Registration.route) {
-            RegistrationScreen()
+            RegistrationScreen(){
+                navController.popBackStack()
+                navController.navigate(Screen.Home.route)
+            }
         }
 
         composable(Screen.Home.route) {

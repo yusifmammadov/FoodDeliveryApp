@@ -19,6 +19,7 @@ import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.yusifmammadov.fooddelivery.R
 import com.yusifmammadov.fooddelivery.ui.theme.FoodDeliveryAppTheme
 import kotlinx.coroutines.delay
@@ -52,11 +53,21 @@ fun SplashScreen(
             )
             Column(modifier = modifier.align(Alignment.Center)) {
 
-                Image(painter = painterResource(id = R.drawable.logo),
-                    contentDescription = null)
+                Image(
+                    painter = painterResource(id = R.drawable.logo),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .fillMaxWidth(0.5f)
+                        //Png file's borders are not symmetrical, so I had to use a workaround like this
+                        .padding(start = 6.dp)
+                )
 
-                Image(painter = painterResource(id = R.drawable.logo_app_name),
-                    contentDescription = null)
+                Image(
+                    painter = painterResource(id = R.drawable.logo_app_name),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .fillMaxWidth(0.5f)
+                )
             }
         }
 
@@ -69,6 +80,14 @@ fun SplashScreen(
 @Composable
 @Preview(showBackground = true, showSystemUi = true)
 fun SplashScreenPreview() {
+    FoodDeliveryAppTheme {
+        SplashScreen({})
+    }
+}
+
+@Composable
+@Preview(widthDp = 240, heightDp = 320, showBackground = true)
+fun SplashScreenPreview2() {
     FoodDeliveryAppTheme {
         SplashScreen({})
     }
