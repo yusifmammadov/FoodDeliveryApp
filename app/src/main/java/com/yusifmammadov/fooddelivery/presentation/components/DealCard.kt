@@ -33,7 +33,8 @@ fun DealCard(
         modifier = modifier
             .fillMaxWidth()
             .aspectRatio(13f / 6f),
-        shape = RoundedCornerShape(16)
+        shape = RoundedCornerShape(16),
+        elevation = 4.dp
     ) {
         Box(
             modifier = Modifier

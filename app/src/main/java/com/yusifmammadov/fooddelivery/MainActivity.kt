@@ -17,6 +17,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.yusifmammadov.fooddelivery.presentation.navigation.FoodyNavHost
+import com.yusifmammadov.fooddelivery.presentation.navigation.Graph
 import com.yusifmammadov.fooddelivery.presentation.navigation.Screen
 import com.yusifmammadov.fooddelivery.presentation.splash.SplashScreen
 import com.yusifmammadov.fooddelivery.ui.theme.FoodDeliveryAppTheme
@@ -30,10 +31,10 @@ class MainActivity : ComponentActivity() {
 
         val sharedPrefs = getSharedPreferences(Constants.SHARED_PREFS, Context.MODE_PRIVATE)
         val isOnboardingFinished = sharedPrefs.getBoolean(Constants.ONBOARDING_FINISHED, false)
-        val afterSplashRoute = if (isOnboardingFinished) Screen.Home.route else Screen.Onboarding.route
+        val afterSplashRoute = if (isOnboardingFinished) Graph.MAIN else Screen.Onboarding.route
         setContent {
             FoodDeliveryAppTheme {
-                androidx.compose.material.Surface(
+                Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
@@ -51,6 +52,5 @@ fun FoodyApp(
     afterSplashRoute: String
 ) {
     val navController = rememberNavController()
-    val screenHeight = rememberScreenHeight()
     FoodyNavHost(navController = navController, afterSplashRoute = afterSplashRoute)
 }
